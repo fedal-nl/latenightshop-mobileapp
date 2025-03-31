@@ -2,10 +2,7 @@
   "expo": {
     "name": "latenightshop-app",
     "slug": "latenightshop-app",
-<<<<<<< HEAD
     "scheme": "latenightshop-app",
-=======
->>>>>>> 0904276 (main branch changes)
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,16 +23,11 @@
       }
     },
     "web": {
-<<<<<<< HEAD
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
     "plugins": [
       "expo-router"
     ]
-=======
-      "favicon": "./assets/favicon.png"
-    }
->>>>>>> 0904276 (main branch changes)
   }
 }
