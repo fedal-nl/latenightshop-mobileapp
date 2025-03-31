@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
@@ -39,6 +40,8 @@ yarn-error.*
 =======
 =======
 >>>>>>> 0904276 (main branch changes)
+=======
+>>>>>>> ae49789 (gitignore conflict solved)
 # Logs
 logs
 *.log
@@ -179,6 +182,8 @@ dist
 >>>>>>> 8361e2e (Initial commit)
 =======
 =======
+=======
+>>>>>>> 23ec916 (Initial commit)
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
@@ -215,5 +220,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+<<<<<<< HEAD
+>>>>>>> 23ec916 (Initial commit)
+=======
 >>>>>>> 23ec916 (Initial commit)
 >>>>>>> 0904276 (main branch changes)
