@@ -36,7 +36,8 @@ const ProductListItem = ({ product }: { product: Product }) => {
       </Text>
       <VStack className="mb-6">
         <Heading size="md" className="mb-4">
-        ${product.price}
+            {/* using JSX interpolation */}
+        {`$${product.price}`}
         </Heading>
         <Text size="sm">
           {product.description}
