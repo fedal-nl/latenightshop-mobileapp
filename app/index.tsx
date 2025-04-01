@@ -8,6 +8,9 @@ const index = () => {
   return (
     <FlatList
         data={products}
+        numColumns={2}
+        contentContainerStyle={{gap: 10}}
+        
         renderItem={({item}) => (
             ProductListItem({product: item})
         )}
