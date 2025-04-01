@@ -1,12 +1,28 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, FlatList } from 'react-native'
+import React from 'react';
+import products from '../assets/products.json';
+import ProductListItem from '../components/ProductListItem';
+
 
 const index = () => {
   return (
-    <View>
-      <Text>index page v1</Text>
-    </View>
+    <FlatList
+        data={products}
+        renderItem={({item}) => (
+            ProductListItem({product: item})
+        )}
+    >
+    </FlatList>
   )
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+});
 
 export default index
