@@ -27,7 +27,7 @@ const ProductListItem = ({ product }: { product: Product }) => {
         return (
             <Link href={`/product/${product.id}`} asChild>
                 <Pressable style={{ flex: 1}}>
-                  <Card className="p-5 rounded-lg max-w-[360px] m-3 flex-1">      
+                  <Card className="p-5 rounded-lg flex-1">      
                     <Image
                     source={{
                         uri: product.image,
@@ -45,9 +45,6 @@ const ProductListItem = ({ product }: { product: Product }) => {
                     {/* using JSX interpolation */}
                     {`$${product.price}`}
                     </Heading>
-                    <Text size="sm">
-                        {product.description}
-                    </Text>
                     </VStack>
                     <Box className="flex-col sm:flex-row">
                         <Button className="px-1 py-2 mr-0 mb-3 sm:mr-3 sm:mb-0 sm:flex-1" >

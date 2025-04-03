@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import product from '../../assets/products.json';
 import { Card } from '../../components/ui/card';
 import { Image } from '../../components/ui/image';
@@ -21,7 +21,8 @@ const ProductDetails = () => {
   }
 
   return (
-    <Card className="p-5 rounded-lg max-w-[360px] m-3 flex-1">      
+    <Card className="p-5 rounded-lg max-w-[360px] m-3 mx-auto flex-1">
+      <Stack.Screen options={{ title: productDetails.name }} />
       <Image
       source={{
           uri: productDetails.image,
