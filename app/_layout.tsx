@@ -8,5 +8,11 @@ import { GluestackUIProvider } from "../components/ui/gluestack-ui-provider";
     Layout component that wraps the entire app
 */
 export default function RootLayout() {
-  return <GluestackUIProvider mode="light"><Stack /></GluestackUIProvider>;
+  return (
+        <GluestackUIProvider mode="light">
+            <Stack>
+                <Stack.Screen name="index" options={{ title: "Products" }} />
+            </Stack>
+        </GluestackUIProvider>
+  );
 }
