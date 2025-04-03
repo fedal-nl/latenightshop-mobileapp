@@ -9,11 +9,9 @@ const index = () => {
     <FlatList
         data={products}
         numColumns={2}
-        contentContainerStyle={{gap: 10}}
-        
-        renderItem={({item}) => (
-            ProductListItem({product: item})
-        )}
+        contentContainerStyle={{ gap: 8, maxWidth: 960, marginHorizontal: "auto", width: "100%"}} //"gap-2 max-w-[960px] mx-auto w-full"
+        columnWrapperStyle={{ gap: 8 }}
+        renderItem={({ item }) => <ProductListItem product={item} />}
     >
     </FlatList>
   )
