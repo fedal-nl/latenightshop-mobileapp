@@ -1,72 +1,86 @@
 [
-  {
-    "id": 1,
-    "name": "AirPods Pro",
-    "description": "Apple's wireless noise-cancelling earbuds with adaptive transparency and spatial audio.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/airpodspro.jpg",
-    "price": 249.99
-  },
-  {
-    "id": 2,
-    "name": "Apple Watch Series 9",
-    "description": "Latest smartwatch from Apple featuring always-on retina display and advanced health monitoring.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/applewatch.jpg",
-    "price": 399.99
-  },
-  {
-    "id": 3,
-    "name": "Bose Noise Cancelling Headphones",
-    "description": "Premium noise-cancelling over-ear headphones with 20 hours of battery life and voice assistant integration.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/boseheadphones.jpg",
-    "price": 349.99
-  },
-  {
-    "id": 4,
-    "name": "Dyson V15 Vacuum",
-    "description": "Powerful cordless vacuum with laser-detect technology and advanced filtration system.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/dysonvacuum.jpg",
-    "price": 699.99
-  },
-  {
-    "id": 5,
-    "name": "Samsung Galaxy S24 Ultra",
-    "description": "Flagship smartphone with 200MP camera, 120Hz AMOLED display, and S Pen support.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/galaxys24ultra.jpg",
-    "price": 1199.99
-  },
-  {
-    "id": 6,
-    "name": "iPad Pro",
-    "description": "12.9-inch iPad Pro with M2 chip, Liquid Retina XDR display, and 5G connectivity.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/ipad.jpg",
-    "price": 1099.99
-  },
-  {
-    "id": 7,
-    "name": "iPhone 16 Pro",
-    "description": "Apple's latest iPhone with A18 Bionic chip, ProMotion display, and advanced triple-lens camera system.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/iphone16pro.jpg",
-    "price": 1299.99
-  },
-  {
-    "id": 8,
-    "name": "MacBook Pro 16-inch",
-    "description": "High-performance laptop with M2 Max chip, Liquid Retina XDR display, and 1TB SSD.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/macbookpro.jpg",
-    "price": 2499.99
-  },
-  {
-    "id": 9,
-    "name": "Nike Air Max 270",
-    "description": "Popular running shoes with Nike Air cushioning and breathable mesh upper.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/nikeairmax.jpg",
-    "price": 149.99
-  },
-  {
-    "id": 10,
-    "name": "PlayStation 5",
-    "description": "Sony's latest gaming console with 8K output, lightning-fast load times, and 825GB SSD.",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/ecom/playstation5.jpg",
-    "price": 499.99
-  }
+    {
+        "id": 15,
+        "name": "Mini Snack",
+        "description": "The best snacks for every day and night and something else just test.",
+        "image": "https://images.openfoodfacts.org/images/products/000/002/307/0110/front_nl.8.full.jpg",
+        "price": 12.45
+    },
+    {
+        "id": 16,
+        "name": "Party service Snacks",
+        "description": "The best party snacks for every meal and no meal. Just eat it.",
+        "image": "https://departyservice.nl/wp-content/uploads/2022/02/DPSMinisnacks-600x600.jpg",
+        "price": 15.99
+    },
+    {
+        "id": 17,
+        "name": "Scooby-Doo snacks",
+        "description": "Scooby-Doo Fruit Snacks 10pk | EU bezorging - Kellys Expat Shopping",
+        "image": "https://i5.walmartimages.com/seo/Scooby-Doo-Pizzaquitos-Frozen-Snack-12-oz-Box-Frozen_26f27abc-cf76-4745-9127-7c1408f98da4.6658469affacb2ff7323e217aa0c7392.jpeg",
+        "price": 15.99
+    },
+    {
+        "id": 18,
+        "name": "Jumbo snacks",
+        "description": "Jumbo Snacks - Garidares - 85g | Bakaliko - Online Griekse Producten Kopen",
+        "image": "https://www.jumbo.com/dam-images/fit-in/360x360/Products/25032024_1711377201889_1711377216848_8718452767090_9.png",
+        "price": 11.35
+    },
+    {
+        "id": 19,
+        "name": "Pizza napoletana",
+        "description": "Een wereld aan Thermomix®-recepten - Cookidoo® biedt u heerlijke recept",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b2/16/2d/this-is-a-fusion-of-italian.jpg",
+        "price": 10.12
+    },
+    {
+        "id": 20,
+        "name": "Roasted Garlic and Onion Pizza",
+        "description": "This pizza has both salty and sweet flavors. You can also add some sliced chorizo or sausage",
+        "image": "https://img.freepik.com/premium-photo/pizza-with-different-toppings-it_779834-3127.jpg",
+        "price": 9.59
+    },
+    {
+        "id": 21,
+        "name": "Tomato Baguette Pizza",
+        "description": "When my tomatoes ripen all at once, I use them up in simple recipes like this one. Cheesy baguette",
+        "image": "https://worldlytreat.com/wp-content/uploads/2021/05/Italian-pepperoni-pizza-recipe-060-scaled.jpg",
+        "price": 9.59
+    },
+    {
+        "id": 22,
+        "name": "Italiaanse pizza",
+        "description": "Pizza Margherita, volgens Napolitaans recept - Parliamo italiano – Ontdek het echte Italië",
+        "image": "https://i0.wp.com/nationalfoods.org/wp-content/uploads/2018/11/National-Dish-of-Italy-Pizza.jpg",
+        "price": 12.11
+    },
+    {
+        "id": 23,
+        "name": "Coca-Cola",
+        "description": "Buy Coca-Cola Soft Drink near you at best prices. Get fastest online deliver",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Coca_Cola_Flasche_-_Original_Taste.jpg",
+        "price": 2.1
+    },
+    {
+        "id": 24,
+        "name": "Royal",
+        "description": "Royal Orange Soda in can, 330ml. Served chilled.",
+        "image": "https://www.coca-cola.com/content/dam/onexp/ph/en/brands/royal/royal-tru-orange.png",
+        "price": 1.7
+    },
+    {
+        "id": 25,
+        "name": "Sprite",
+        "description": "Green Lemon Sprite Cold Drink, Packaging Size: 750, Packaging Type: Bottle at best price in ",
+        "image": "https://www.cokesolutions.com/content/dam/cokesolutions/us/images/Products/Sprite-glass.jpg",
+        "price": 2.25
+    },
+    {
+        "id": 26,
+        "name": "Fanta",
+        "description": "24 x Fanta Lemon Soft Drink Still Fizzy Pop 500ml FREE TRACKED DELIVERY",
+        "image": "https://m.media-amazon.com/images/I/51Wz7fzZx2L.jpg",
+        "price": 3.15
+    }
 ]
