@@ -14,13 +14,13 @@ export async function getProducts() {
     .then((res) => {
         console.log("Response: ", res);
         if (!res.ok) {
-            throw new Error(`ERROR:  ${res}`);
+            throw new Error(`ERROR ${res.status}:  ${res.statusText}`);
         }
         return res.json();
     })
 }
 
-export async function getProduct(id: Number) {
+export async function getProduct(id: number) {
   // get the product by id
   return await fetch(`${API}/products/${id}`, {
     method: "GET",
@@ -31,7 +31,7 @@ export async function getProduct(id: Number) {
     .then((res) => {
         console.log("Response: ", res);
         if (!res.ok) {
-            throw new Error(`ERROR:  ${res}`);
+            throw new Error(`ERROR ${res.status}:  ${res.statusText}`);
         }
         return res.json();
     })
