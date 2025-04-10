@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 16.1.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "http://192.168.68.64:3000"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://c29f2181-5f5b-4be2-b2b8-c2773ff8b0e9.us-east-1.cloud.genez.io"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://c29f2181-5f5b-4be2-b2b8-c2773ff8b0e9.us-east-1.cloud.genez.io"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

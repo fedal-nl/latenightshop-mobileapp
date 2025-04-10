@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "latenightshop-app",
+    "owner": "fedal_dev",
     "slug": "latenightshop-app",
     "scheme": "latenightshop-app",
     "version": "1.0.0",
@@ -14,13 +15,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fedal-dev.latenightshopapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.fedal_dev.latenightshopapp"
     },
     "web": {
       "favicon": "./assets/favicon.png",
