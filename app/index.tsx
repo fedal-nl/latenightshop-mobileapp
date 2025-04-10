@@ -10,6 +10,11 @@ const index = () => {
     const { data, isLoading, error } = useQuery({
         queryKey: ['products'],
         queryFn: getProducts,
+        staleTime: 1000 * 60 * 5, // 5 minutes Time in ms before data is considered staled. During this time, React Query wonâ€™t refetch.
+        gcTime: 1000 * 60 * 10, // 10 minutes Time in ms the data stays in cache after itâ€™s unused.
+        refetchOnMount: false, // Prevents refetch when component remounts.
+        refetchOnWindowFocus: false, // Prevents refetch when switching back to the tab.
+        refetchOnReconnect: false, // Prevents refetch when internet reconnects.
     });
 
     if (isLoading) {

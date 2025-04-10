@@ -1,4 +1,4 @@
-const API = process.env.EXPO_PUBLIC_API_DEV_URL;
+const API = process.env.EXPO_PUBLIC_API_URL;
 
 export async function getProducts() {
     console.log("API URL: ", API);

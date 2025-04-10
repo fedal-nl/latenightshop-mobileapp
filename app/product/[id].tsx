@@ -10,16 +10,24 @@ import { Button, ButtonText } from '../../components/ui/button';
 import { Box } from '../../components/ui/box';
 import { getProduct } from '../../api/products';
 import { useQuery } from '@tanstack/react-query';
+import useStore from '../../store/cartStore';
 
 
 const ProductDetails = () => {
   const { id } = useLocalSearchParams();
+  const addItem = useStore((state: any) => state.addToCart);
+  const cartItems = useStore((state: any) => state.cart);
+  console.log("cart items => ", JSON.stringify(cartItems, null, 2));
 
   // Find the product by id
-  // const productDetails = product.find((product) => product.id === Number(id));
   const {data, isLoading, error} = useQuery({
     queryKey: ['products', id],
     queryFn: () => getProduct(Number(id)),
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    gcTime: 1000 * 60 * 10, // 10 minutes
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
   console.log("product details found => ", data);
   
@@ -33,6 +41,12 @@ const ProductDetails = () => {
 
   if (!data) {
     return <Text>Product not found</Text>
+  }
+
+  const addToCart = (data: any) => {
+    console.log("Adding item to cart => ", data);
+    addItem(data);
+    console.log("Item added to cart => ", data);
   }
 
   return (
@@ -60,7 +74,9 @@ const ProductDetails = () => {
         </Text>
       </VStack>
       <Box className="flex-col sm:flex-row">
-        <Button className="px-1 py-2 mr-0 mb-3 sm:mr-3 sm:mb-0 sm:flex-1" >
+        <Button className="px-1 py-2 mr-0 mb-3 sm:mr-3 sm:mb-0 sm:flex-1" 
+          onPress={() => addToCart(data)}
+        >
           <ButtonText size="sm">Add to cart</ButtonText>
         </Button>
         <Button
