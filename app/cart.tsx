@@ -39,7 +39,7 @@ const CartScreen = () => {
         )}
         ListFooterComponent={() => (
             <HStack className='bg-white p-3'>
-                <Text className='ml-auto'>`Total: ${cartItems.reduce((acc: number, item: any) => acc + item.product.price * item.quantity, 0)}</Text>
+                <Text className='ml-auto'>{`Total: ${cartItems.reduce((acc: number, item: any) => acc + item.product.price * item.quantity, 0)}`}</Text>
                 <Button onPress={checkout} className='ml-auto'>
                     <Text className='color-white font-roboto'>Checkout</Text>
                 </Button>
