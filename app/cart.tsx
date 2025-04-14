@@ -9,7 +9,8 @@ import { Button } from '../components/ui/button';
 const CartScreen = () => {
     const cartItems = useStore((state: any) => state.cart);
     console.log("cart items => ", JSON.stringify(cartItems, null, 2));
-    const totalItems = cartItems.reduce((acc: number, item: any) => acc + item.quantity, 0);
+    // const totalItems = cartItems.reduce((acc: number, item: any) => acc + item.quantity, 0);
+    const totalItems = useStore((state: any) => state.getTotalItems());
     console.log("total items => ", totalItems);
 
     const emptyCart = useStore((state: any) => state.clearCart);
