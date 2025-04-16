@@ -20,8 +20,12 @@ const CartScreen = () => {
     const emptyCart = useStore((state: any) => state.clearCart);
     const isLoggedIn = useAuth((state: any) => state.isLoggedIn);
 
-    const checkout = async () => {
+    const handleCheckout = async () => {
         console.log("Checkout clicked");
+        if (!isLoggedIn) {
+            console.log("User is not logged in");
+            return;
+        }
         createOrderMutation.mutate(cartItems);
     }
 
@@ -107,7 +111,7 @@ const CartScreen = () => {
         ListFooterComponent={() => (
             <HStack className='bg-white p-3'>
                 <Text className='ml-auto'>{`Total: ${cartItems.reduce((acc: number, item: any) => acc + item.product.price * item.quantity, 0)}`}</Text>
-                <Button onPress={checkout} className='ml-auto'>
+                <Button onPress={handleCheckout} className='ml-auto'>
                     <Text className='color-white font-roboto'>Checkout</Text>
                 </Button>
                 {!isLoggedIn ? (
