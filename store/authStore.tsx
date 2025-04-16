@@ -1,19 +1,16 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import * as SecureStore from 'expo-secure-store';
+import { UserType } from '@/types/user';
+import { AuthStoreType } from '@/types/auth';
 
-type User = {
-    id: number;
-    name: string;
-    email: string;
-};
+// used the expo-secure-store to store the user data securely because the localStorage & the AsyncStorage are not secure
+// and can be accessed by other apps on the device. So do not store tokens or sensitive data in the localStorage or AsyncStorage.
 
-type AuthStoreType = {
-  user: User | null;
-  token: string | null;
-  isLoggedIn: boolean;
-};
 
+
+// The secureStorage object is used to store the user data securely using the expo-secure-store. 
+// It expects the three methods: getItem, setItem, and removeItem.
 const secureStorage = {
     async getItem(key: string) {
         const value = await SecureStore.getItemAsync(key);
@@ -34,7 +31,7 @@ export const useAuth = create<AuthStoreType>()(
                 user: null,
                 token: null,
                 isLoggedIn: false,
-                setUser: (user: User) => set({user}),
+                setUser: (user: UserType) => set({user}),
                 setToken: (token: string) => set({token}),
                 setIsLoggedIn: (isLoggedIn: boolean) => set({isLoggedIn}),
             }),
@@ -46,5 +43,6 @@ export const useAuth = create<AuthStoreType>()(
                     token: state.token,
                     isLoggedIn: state.isLoggedIn,
                 }),
-            })
+            }
+    )
 );

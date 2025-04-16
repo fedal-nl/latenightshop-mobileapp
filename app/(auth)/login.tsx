@@ -60,7 +60,7 @@ const LoginScreen = () => {
   }
 
   return (
-    <FormControl isInvalid={handleLoginSubmit.error} className="p-4 border rounded-lg border-outline-300">
+    <FormControl isInvalid={Boolean(handleLoginSubmit.error)} className="p-4 border rounded-lg border-outline-300">
     <Stack.Screen options={{ title: "Login" }} />
       <VStack space="xl">
         <Heading className="text-typography-900">Login</Heading>

@@ -37,21 +37,7 @@ export default function RootLayout() {
                             </View>
                         </Pressable>
                     </Link>
-                    ),
-                    headerLeft: () => (
-                        <Link href={'/login'} asChild>
-                            <Pressable style={ Platform.select({
-                                ios: { marginRight: 5},
-                                android: { marginRight: 5},
-                                web: { marginRight: 16},
-                                default: { marginRight: 16}
-                                })}>
-                                    <Text className=" bg-red-500 text-white text-xs rounded-full px-2 py-1">
-                                        Login
-                                    </Text>
-                            </Pressable>
-                        </Link>
-                ) }}>
+                    )}}>
                     <Stack.Screen name="index" options={{ title: "Products" }} />
                     <Stack.Screen name="(auth)/login" options={{ title: "Login" }} />
                     <Stack.Screen name="cart" options={{ title: "Cart" }} />
