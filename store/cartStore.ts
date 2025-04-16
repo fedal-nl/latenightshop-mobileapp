@@ -1,23 +1,14 @@
 import { create } from 'zustand';
+import { ProductType } from '@/types/product';
+import { CartItemType } from '@/types/cart';
 
-type Product = {
-    name: string;
-    id: number;
-    description: string;
-    price: number;
-    image: string;
-  };
   
-  type CartItem = {
-    product: Product;
-    quantity: number;
-  };
-  
+
   type Store = {
-    cart: CartItem[];
-    addToCart: (product: Product) => void;
-    removeFromCart: (productId: string) => void;
-    updateCartItem: (productId: string, quantity: number) => void;
+    cart: CartItemType[];
+    addToCart: (product: ProductType) => void;
+    removeFromCart: (productId: number) => void;
+    updateCartItem: (productId: number, quantity: number) => void;
     clearCart: () => void;
     getTotalItems: () => number;
   };
