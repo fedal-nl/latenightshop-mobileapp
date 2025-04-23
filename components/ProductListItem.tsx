@@ -21,7 +21,7 @@ type Product = {
     }
 
 const ProductListItem = ({ product }: { product: Product }) => {
-    // Get the addToCart function from the store and use it to the add the items from the product list
+    // Get the addToCart function from the store to add items to the shopping list
     const addItem = useStore((state: any) => state.addToCart);
     const handleAddToCart = (productItem: Product) => {
         addItem(productItem);
