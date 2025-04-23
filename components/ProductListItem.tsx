@@ -8,8 +8,7 @@ import { Heading } from './ui/heading';
 import { Text } from './ui/text';
 import { Button, ButtonText } from './ui/button';
 import { Box } from './ui/box';
-
-
+import useStore from '@/store/cartStore';
 
 
 // Define the ProductListItem component
@@ -22,12 +21,16 @@ type Product = {
     }
 
 const ProductListItem = ({ product }: { product: Product }) => {
+    // Get the addToCart function from the store and use it to the add the items from the product list
+    const addItem = useStore((state: any) => state.addToCart);
+    const handleAddToCart = (productItem: Product) => {
+        addItem(productItem);
+    }
 
-        // const router = useRouter();
-        return (
-            <Link href={`/product/${product.id}`} asChild>
-                <Pressable style={{ flex: 1}}>
-                  <Card className="p-5 rounded-lg flex-1">      
+    return (
+              <Card className="p-5 rounded-lg flex-1">      
+                <Link href={`/product/${product.id}`} asChild>
+                  <Pressable style={{ flex: 1}}>
                     <Image
                     source={{
                         uri: product.image,
@@ -40,21 +43,26 @@ const ProductListItem = ({ product }: { product: Product }) => {
                     <Text className="text-sm font-normal mb-2 text-typography-700">
                     {product.name}
                     </Text>
-                    <VStack className="mb-6">
-                    <Heading size="md" className="mb-4">
-                    {/* using JSX interpolation */}
-                    {`$${product.price}`}
-                    </Heading>
-                    </VStack>
-                    <Box className="flex-col sm:flex-row">
-                        <Button className="px-1 py-2 mr-0 mb-3 sm:mr-3 sm:mb-0 sm:flex-1" >
-                            <ButtonText size="sm">Add to cart</ButtonText>
-                        </Button>
-                    </Box>
-                </Card>
-              </Pressable>
-            </Link>
-        )
+                </Pressable>
+              </Link>
+
+                <VStack className="mb-6">
+                <Heading size="md" className="mb-4">
+                {/* using JSX interpolation */}
+                {`$${product.price}`}
+                </Heading>
+                </VStack>
+                <Box className="flex-col sm:flex-row">
+                    <Button 
+                      className="px-1 py-2 mr-0 mb-3 sm:mr-3 sm:mb-0 sm:flex-1" 
+                      onPress={() => handleAddToCart(product)}
+                      
+                    >
+                        <ButtonText size="sm">Add to cart</ButtonText>
+                    </Button>
+                </Box>
+            </Card>
+    )
 }
 
 const styles = StyleSheet.create({
