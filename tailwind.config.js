@@ -196,6 +196,10 @@ module.exports = {
         'soft-3': '0px 0px 30px rgba(38, 38, 38, 0.1)',
         'soft-4': '0px 0px 40px rgba(38, 38, 38, 0.1)',
       },
+      aliases: {
+        px: 'paddingHorizontal',
+        py: 'paddingVertical',
+      },
     },
   },
   plugins: [gluestackPlugin],

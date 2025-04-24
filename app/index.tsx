@@ -1,8 +1,10 @@
 import { StyleSheet, Text, FlatList, useWindowDimensions, ActivityIndicator } from 'react-native'
 import React from 'react';
 import { useQuery} from '@tanstack/react-query';
-import ProductListItem from '../components/ProductListItem';
-import { getProducts } from '../api/products';
+import ProductListItem from '@/components/ProductListItem';
+import CategoryListItems from '@/components/CategoryListItems';
+import { getProducts } from '@/api/products';
+import { Box } from '@/components/ui/box';
 
 
 const index = () => {
@@ -27,15 +29,18 @@ const index = () => {
 
     const numColumns = width > 700 ? 3 : 2; // on mobile screen with less than 700px width, show 2 columns, else show 3 columns
     return (
-        <FlatList
-            data={data}
-            key={numColumns} // change the key prop to force re-render
-            numColumns={numColumns}
-            contentContainerStyle={{ maxWidth: 960, marginHorizontal: "auto", width: "100%"}} //"gap-2 max-w-[960px] mx-auto w-full"
-            columnWrapperStyle={{ gap: 5 }}
-            renderItem={({ item }) => <ProductListItem product={item} />}
-        >
-        </FlatList>
+        <Box className="flex-1">
+            <CategoryListItems />
+            <FlatList
+                data={data}
+                key={numColumns} // change the key prop to force re-render
+                numColumns={numColumns}
+                contentContainerStyle={{ maxWidth: 960, marginHorizontal: "auto", width: "100%"}} //"gap-2 max-w-[960px] mx-auto w-full"
+                columnWrapperStyle={{ gap: 5 }}
+                renderItem={({ item }) => <ProductListItem product={item} />}
+            >
+            </FlatList>
+        </Box>
     )
 }
 
