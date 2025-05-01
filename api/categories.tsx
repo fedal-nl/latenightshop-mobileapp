@@ -1,6 +1,6 @@
 const API = process.env.EXPO_PUBLIC_API_URL;
 
-// returns a promis of the categories
+// returns a promise of the categories
 export async function getCategories() {
     console.log("API URL: ", API);
     if (!API) {
