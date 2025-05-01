@@ -43,7 +43,7 @@ export default function CategoryHeader({ onSelectedCategory }: any) {
       <HStack>
         {data.map((category: CategoryType, index: number) => (
           <Pressable
-            key={index}
+            key={category.id}
             style={{ backgroundColor: '#fff', alignItems: 'center', width: 150, marginHorizontal: 0 }}
             onPress={() => {
               onSelectedCategory(category.id);
