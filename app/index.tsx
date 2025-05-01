@@ -1,11 +1,15 @@
-import { StyleSheet, Text, FlatList, useWindowDimensions, ActivityIndicator } from 'react-native'
-import React from 'react';
+import { StyleSheet, Text, FlatList, useWindowDimensions, ActivityIndicator } from 'react-native';
+import React, { useState } from 'react';
 import { useQuery} from '@tanstack/react-query';
-import ProductListItem from '../components/ProductListItem';
-import { getProducts } from '../api/products';
+import ProductListItem from '@/components/ProductListItem';
+import CategoryListItems from '@/components/CategoryListItems';
+import { getProducts } from '@/api/products';
+import { Box } from '@/components/ui/box';
+import { ProductType } from '@/types/product';
 
 
 const index = () => {
+    const [ selectedCategory, setSelectedCategory ] = useState(null);
     const { width } = useWindowDimensions();
     const { data, isLoading, error } = useQuery({
         queryKey: ['products'],
@@ -25,17 +29,38 @@ const index = () => {
         return <Text>Error: {error.message}</Text>;
     }
 
+    if (!data) {
+        return <Text>No products found</Text>;
+    }
+
+    // Filter products by selected category
+    // if no category is selected or category id is 1, show all products
+    const filteredProducts = !selectedCategory || selectedCategory === 1 ? data : 
+        data.filter((product: ProductType) => product.category_id === selectedCategory); // filter products by selected category
+    
+    console.log("filtered products => ", filteredProducts);
     const numColumns = width > 700 ? 3 : 2; // on mobile screen with less than 700px width, show 2 columns, else show 3 columns
     return (
-        <FlatList
-            data={data}
-            key={numColumns} // change the key prop to force re-render
-            numColumns={numColumns}
-            contentContainerStyle={{ maxWidth: 960, marginHorizontal: "auto", width: "100%"}} //"gap-2 max-w-[960px] mx-auto w-full"
-            columnWrapperStyle={{ gap: 5 }}
-            renderItem={({ item }) => <ProductListItem product={item} />}
-        >
-        </FlatList>
+        <Box className="flex-1">
+            <FlatList
+                data={filteredProducts}
+                key={numColumns} // change the key prop to force re-render
+                numColumns={numColumns}
+                contentContainerStyle={{ maxWidth: 960, marginHorizontal: "auto", width: "100%"}} //"gap-2 max-w-[960px] mx-auto w-full"
+                columnWrapperStyle={{ gap: 5, justifyContent: 'space-between' }} // add gap between columns
+                renderItem={({ item }) => <ProductListItem product={item} />}
+                ListHeaderComponent={
+                <Box style={{ alignItems: 'center', width: '100%'}}>
+                    <Box style={{maxWidth: 960, width: '100%'}}>
+                        <CategoryListItems onSelectedCategory={setSelectedCategory} />
+                    </Box>
+                </Box>
+                }
+                    
+                ListFooterComponentStyle={{ paddingBottom: 100 }} // add padding to the bottom of the list
+            >
+            </FlatList>
+        </Box>
     )
 }
 

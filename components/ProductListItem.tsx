@@ -9,21 +9,13 @@ import { Text } from './ui/text';
 import { Button, ButtonText } from './ui/button';
 import { Box } from './ui/box';
 import useStore from '@/store/cartStore';
+import { ProductType } from '@/types/product';
 
 
-// Define the ProductListItem component
-type Product = {
-    name: string;
-    id: number;
-    description: string;
-    price: number;
-    image: string;
-    }
-
-const ProductListItem = ({ product }: { product: Product }) => {
+const ProductListItem = ({ product }: { product: ProductType }) => {
     // Get the addToCart function from the store to add items to the shopping list
     const addItem = useStore((state: any) => state.addToCart);
-    const handleAddToCart = (productItem: Product) => {
+    const handleAddToCart = (productItem: ProductType) => {
         addItem(productItem);
     }
 
@@ -33,7 +25,7 @@ const ProductListItem = ({ product }: { product: Product }) => {
                   <Pressable style={{ flex: 1}}>
                     <Image
                     source={{
-                        uri: product.image,
+                        uri: product.image_url,
                     }}
                     className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]"
                     alt={`${product.name} image`}

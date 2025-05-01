@@ -12,7 +12,7 @@ export async function getProducts() {
     },
   })
     .then((res) => {
-        console.log("Response: ", res);
+        console.log("Response Products: ", res);
         if (!res.ok) {
             throw new Error(`ERROR ${res.status}:  ${res.statusText}`);
         }

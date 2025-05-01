@@ -54,7 +54,7 @@ const ProductDetails = () => {
       <Stack.Screen options={{ title: data.name }} />
       <Image
       source={{
-          uri: data.image,
+          uri: data.image_url,
       }}
       className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]"
       alt={`${data.name} image`}
