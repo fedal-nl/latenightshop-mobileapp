@@ -56,7 +56,7 @@ const index = () => {
                     </Box>
                 </Box>
                 }
-                    
+                stickyHeaderIndices={[0]} // make the header sticky
                 ListFooterComponentStyle={{ paddingBottom: 100 }} // add padding to the bottom of the list
             >
             </FlatList>
