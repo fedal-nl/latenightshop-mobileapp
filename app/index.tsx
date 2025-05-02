@@ -50,13 +50,13 @@ const index = () => {
                 columnWrapperStyle={{ gap: 5, justifyContent: 'space-between' }} // add gap between columns
                 renderItem={({ item }) => <ProductListItem product={item} />}
                 ListHeaderComponent={
-                <Box style={{ alignItems: 'center', width: '100%'}}>
-                    <Box style={{maxWidth: 960, width: '100%'}}>
-                        <CategoryListItems onSelectedCategory={setSelectedCategory} />
+                    <Box style={{ alignItems: 'center', width: '100%'}}>
+                        <Box style={{maxWidth: 960, width: '100%'}}>
+                            <CategoryListItems onSelectedCategory={setSelectedCategory} />
+                        </Box>
                     </Box>
-                </Box>
                 }
-                    
+                stickyHeaderIndices={[0]} // make the header sticky at index position 0 
                 ListFooterComponentStyle={{ paddingBottom: 100 }} // add padding to the bottom of the list
             >
             </FlatList>
